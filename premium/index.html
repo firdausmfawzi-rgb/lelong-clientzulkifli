@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Premium Auction List · Zulkifli</title>
+<meta name="description" content="Unlock the full private auction master list: full addresses with Google Maps, market value, bank, past auction prices. RM50 for 30 days.">
+<meta name="theme-color" content="#2f6f7c">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#edf1f4;--surface:#fbfcfd;--fg:#22303a;--muted:#4f5d68;--line:#d3dde4;--accent:#2f6f7c;--accent-fg:#fff;--prem:#b8731a;--prem-bg:#fff3e0;--ok:#1d7a45;--ok-bg:#dff0ee;--wa:#1d7a45;--display:'Fraunces',Georgia,serif;--sans:'IBM Plex Sans',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12171b;--surface:#1b2227;--fg:#e4eaee;--muted:#a9b6bf;--line:#2f3a42;--accent:#7cc0cc;--accent-fg:#0d2327;--prem:#f3bd63;--prem-bg:#3a2c14;--ok:#5fd38d;--ok-bg:#17323a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12171b;--surface:#1b2227;--fg:#e4eaee;--muted:#a9b6bf;--line:#2f3a42;--accent:#7cc0cc;--accent-fg:#0d2327;--prem:#f3bd63;--prem-bg:#3a2c14;--ok:#5fd38d;--ok-bg:#17323a;color-scheme:dark}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:1.05rem;line-height:1.55}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px calc(32px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 0 14px}
+.brand{font-weight:700;color:var(--muted);font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
+.lang{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;font-size:.85rem;padding:6px 14px;border-radius:999px;cursor:pointer;min-height:44px}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+.hero{background:linear-gradient(160deg,var(--accent) 0%,#1f4c55 100%);color:#fff;border-radius:22px;padding:28px 22px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero h1{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1.15;margin:0 0 10px;text-wrap:balance}
+.hero p{margin:0;font-size:1.08rem;opacity:.95;max-width:34ch}
+.price{display:inline-flex;align-items:baseline;gap:8px;margin-top:18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:10px 16px}
+.price b{font-family:var(--display);font-size:2.2rem;line-height:1}
+.price span{font-weight:600;opacity:.95}.price span a{color:#fff}
+.price2{margin-left:8px}
+.card.why{margin-top:12px}.card.why ul{margin:8px 0 0;padding-left:18px}.card.why li{margin:6px 0;color:var(--muted)}.price2 b{font-size:1.5rem}
+.plans{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.plans button{flex:1 1 160px;min-width:0;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-weight:700;cursor:pointer}.plans button[aria-pressed="true"]{border-color:var(--prem);background:var(--prem);color:#1b1206}
+.cta{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:10px 18px;border-radius:14px;font-weight:800;font-size:1.08rem;text-decoration:none;border:2px solid transparent;text-align:center}
+.btn.prem{background:var(--prem);color:#1b1206;border-color:var(--prem)}
+.btn.wa{background:var(--wa);color:#fff;border-color:var(--wa)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn.light{background:var(--surface);color:var(--fg);border-color:var(--line)}
+section{margin-top:26px}
+h2{font-family:var(--display);font-weight:700;font-size:1.5rem;line-height:1.2;margin:0 0 12px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-width:0}
+.card .ic{font-size:1.6rem;line-height:1;margin-bottom:6px}
+.card b{display:block;font-size:1.05rem;margin-bottom:2px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th:not(:first-child),td:not(:first-child){width:1%;text-align:center;white-space:nowrap}   /* the three plan columns stay narrow, the feature column wraps */
+@media (max-width:480px){th,td{padding:9px 6px;font-size:.92rem}th{font-size:.68rem;letter-spacing:.03em}td:first-child{padding-left:10px}}
+th{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.y{color:var(--ok);font-weight:700;white-space:nowrap}td.n{color:var(--muted);white-space:nowrap}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.steps li{counter-increment:s;display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}
+.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:10px;background:var(--prem);color:#1b1206;font-weight:800;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;margin-bottom:2px}.steps p{margin:0;color:var(--muted)}
+.qr{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;flex-direction:column;align-items:center;gap:8px;max-width:360px;margin:12px auto 0}
+.qr img{width:100%;max-width:300px;height:auto;display:block;border-radius:10px}
+.qr small{color:#4f5d68;text-align:center}
+.amount{font-family:var(--display);font-size:1.6rem;color:#1b1206;background:var(--prem);border-radius:10px;padding:2px 14px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 14px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700;padding:12px 0;list-style:none;display:flex;justify-content:space-between;gap:10px;min-height:44px;align-items:center}
+summary::-webkit-details-marker{display:none}summary::after{content:'+';color:var(--muted);font-size:1.3rem}details[open] summary::after{content:'−'}
+details p{margin:0 0 12px;color:var(--muted)}
+.fine{color:var(--muted);font-size:.85rem;margin-top:22px;line-height:1.5}
+footer{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:6px 14px}
+.sticky{position:sticky;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--bg) 70%,transparent);margin-top:20px}
+.sticky .btn{width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><div class="brand">Zulkifli</div><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">English</button><button type="button" data-lang="ms" aria-pressed="false">Bahasa Melayu</button></div></div>
+
+<div class="hero">
+<h1 data-i18n="h1">The full auction list, with nothing hidden</h1>
+<p data-i18n="sub">The free preview shows you the properties. Premium shows you everything you need to decide: the exact address, the market value, the bank and what happened at the earlier auctions.</p>
+<div class="price"><b>RM50</b><span data-i18n="per">for 30 days · no auto-renewal</span></div><div class="price price2"><b>RM99</b><span data-i18n="per2">VIP Investor Plan · profit, rent and exit numbers on every unit · <a href="#sip">see what it adds</a></span></div>
+<div class="cta"><a class="btn prem" href="#pay" data-i18n="cta">Unlock Premium now</a><a class="btn ghost" href="https://clientzulkifli.lelongbidgroup.com/" data-i18n="back">Back to the free preview</a></div>
+</div>
+
+<section>
+<h2 data-i18n="get_h">What Premium unlocks</h2>
+<div class="grid">
+<div class="card"><div class="ic">📍</div><b data-i18n="g1">Exact address + Google Maps</b><p data-i18n="g1p">House and unit numbers shown in full. One tap opens the location.</p></div>
+<div class="card"><div class="ic">💰</div><b data-i18n="g2">Market value and % below market</b><p data-i18n="g2p">See how far the auction price sits under the valuation, and sort by the biggest discount.</p></div>
+<div class="card"><div class="ic">🏦</div><b data-i18n="g3">Which bank is selling</b><p data-i18n="g3p">The bank behind each auction, so you know who you are dealing with.</p></div>
+<div class="card"><div class="ic">📉</div><b data-i18n="g4">Past auction prices</b><p data-i18n="g4p">Every earlier round with its date and reserve price, so you can see how the price has been dropping.</p></div>
+<div class="card"><div class="ic">🏢</div><b data-i18n="g5">Completion year</b><p data-i18n="g5p">How old the building is, for condominiums, apartments and flats.</p></div>
+<div class="card"><div class="ic">👤</div><b data-i18n="g7">Borrower name</b><p data-i18n="g7p">The name on the proclamation of sale, as published by the auction sites (name only).</p></div>
+<div class="card"><div class="ic">🔄</div><b data-i18n="g6">Updated every day</b><p data-i18n="g6p">New listings, new auction dates and results come in every day. Same link, just refresh.</p></div>
+</div>
+</section>
+
+<section>
+<h2 data-i18n="cmp_h">Free preview vs Premium</h2>
+<div style="overflow-x:auto"><table>
+<thead><tr><th data-i18n="c_f">Feature</th><th data-i18n="c_free">Free</th><th>Premium</th><th data-i18n="c_sip">VIP</th></tr></thead>
+<tbody>
+<tr><td data-i18n="c1">Property type, area, price, auction date</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c2">Full address and Google Maps</td><td class="n">✗</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c3">Market value and discount</td><td class="n">✗</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c4">Bank</td><td class="n">✗</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c5">Past auction dates and prices</td><td class="n">✗</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c6">Completion year</td><td class="n">✗</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c8">Sizes, bedrooms, bathrooms, LACA, restrictions</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c7">Save units, share, print, WhatsApp the agent</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c9">Borrower name</td><td class="n">✗</td><td class="y">✓</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c10">ROI, rental, projected selling price with RPGT, refinancing</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓</td></tr>
+<tr><td data-i18n="c11">Auction results history (No bidder, Cancelled, Sold)</td><td class="n" data-i18n="c11f">30 days</td><td class="y" data-i18n="c11p">30 days</td><td class="y" data-i18n="c11v">12 months</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section id="sip">
+<h2 data-i18n="sip_h">VIP Investor Plan · RM99 for 30 days</h2>
+<p class="lead" data-i18n="sip_lead">For investors who buy to profit, not to browse. Everything in Premium, plus the numbers a serious buyer works out before bidding, on every unit, every day:</p>
+<div class="grid">
+<div class="card"><div class="ic">🎯</div><b data-i18n="s_1">Know the exit before you bid</b><p data-i18n="s_1p">12 months of results on every unit: what sold and at what price, what was cancelled, what nobody bid on. See which units keep failing and where the bank keeps cutting the reserve, instead of finding out after you paid the deposit.</p></div>
+<div class="card"><div class="ic">📈</div><b data-i18n="s_2">Profit after tax, not before</b><p data-i18n="s_2p">Projected selling price after 3 or 5 years with Malaysian RPGT and the exemption already deducted. The number you keep, not the number that looks good.</p></div>
+<div class="card"><div class="ic">💵</div><b data-i18n="s_3">Rental yield and furnished income</b><p data-i18n="s_3p">Gross yield on the auction price and what the unit could earn basic furnished, so a rental buy is judged on income, not on hope.</p></div>
+<div class="card"><div class="ic">🏦</div><b data-i18n="s_4">Refinancing and cash-out at a glance</b><p data-i18n="s_4p">How much a bank could lend on the market value (90% homes, 70% commercial) and how far that sits above the auction price: the units where your capital can come back out.</p></div>
+<div class="card"><div class="ic">⚙️</div><b data-i18n="s_5">Your assumptions, your numbers</b><p data-i18n="s_5p">Change the rent, growth, loan ratio, years and RPGT rate on the spot and every figure updates for that unit. No spreadsheet, no calculator at midnight.</p></div>
+<div class="card"><div class="ic">🏁</div><b data-i18n="s_6">First to the good ones</b><p data-i18n="s_6p">Every unit from all the banks in one list, updated daily, with the borrower name, bank, past prices and the full analysis. Decide in minutes while others are still collecting notices.</p></div>
+</div>
+<div class="card why"><b data-i18n="sip_why_h">Why serious investors pay RM99</b>
+<ul>
+<li data-i18n="w1">At the auction the 10% deposit is paid on the spot and is forfeited if you cannot complete. One unit you did not buy because the numbers said no pays for VIP many times over.</li>
+<li data-i18n="w2">A single bank valuation report for one property costs more than a month of VIP, and it says nothing about the auction history or the exit.</li>
+<li data-i18n="w3">Compare 20 units in one evening with the same method. Consistency is what separates an investor from a bidder.</li>
+<li data-i18n="w4">Month to month, no auto-renewal. Stop when you have bought.</li>
+</ul></div>
+<div class="cta" style="margin-top:14px"><a class="btn prem" href="#pay" data-plan="sip" data-i18n="sip_cta">Subscribe VIP Investor Plan · RM99</a></div>
+<p class="fine" style="margin-top:10px" data-i18n="sip_fine">Figures are estimates from editable assumptions and public auction notices, not financial advice. The 12-month history builds up from September 2026. Already Premium? WhatsApp Zulkifli to upgrade.</p>
+</section>
+
+<section id="pay">
+<h2 data-i18n="pay_h">How to subscribe</h2>
+<p class="lead" data-i18n="pay_lead">Three steps. Your code is sent once the payment is confirmed, usually the same day.</p>
+<div class="plans" role="group" aria-label="Plan"><button type="button" data-plan="premium" aria-pressed="true" data-i18n="pl_p">Premium · RM50</button><button type="button" data-plan="sip" aria-pressed="false" data-i18n="pl_s">VIP Investor · RM99</button></div>
+<ol class="steps">
+<li><div><b data-i18n="s1">Pay the plan price by scanning the QR code</b><p data-i18n="s1p">Open your banking app, scan, and pay RM50 (Premium) or RM99 (VIP Investor Plan). DuitNow QR works with any Malaysian bank app.</p></div></li>
+<li><div><b data-i18n="s2">Send the receipt on WhatsApp</b><p data-i18n="s2p">Tap the green button below. The message is ready, just attach your receipt screenshot.</p></div></li>
+<li><div><b data-i18n="s3">Receive your access code</b><p data-i18n="s3p">You get a personal code and the link. The code works for the period you pay for (30 days per month). Renew only if you want to.</p></div></li>
+</ol>
+<div class="qr"><div class="amount" id="amount">RM50</div><img src="../img/qr-maybank.png" width="512" height="580" alt="DuitNow QR code for payment to Eden Assets & Property Solutions" data-alt-ms="Kod QR DuitNow untuk bayaran kepada Eden Assets & Property Solutions" data-alt-en="DuitNow QR code for payment to Eden Assets & Property Solutions"><small data-i18n="qr_c">Scan with any Malaysian banking app · Eden Assets & Property Solutions</small></div>
+<div class="cta" style="margin-top:14px"><a class="btn wa" id="waBtn" href="https://wa.me/60139402396?text=Hi%20Zulkifli%2C%20I%20have%20paid%20RM50%20for%20the%2030-day%20premium%20auction%20list.%20Here%20is%20my%20receipt." target="_blank" rel="noopener" data-i18n="wa">💬 Send receipt on WhatsApp</a></div>
+</section>
+
+<section>
+<h2 data-i18n="faq_h">Questions</h2>
+<details><summary data-i18n="q1">Is RM50 a one-time payment?</summary><p data-i18n="a1">RM50 gives you 30 days of access. Nothing renews by itself. If you want to continue, you pay again for the next 30 days, and the same code is extended. You can also pay 2 to 12 months at once at the same rate, for example 3 months RM150 or 12 months RM600.</p></details>
+<details><summary data-i18n="q2">What do I get after paying?</summary><p data-i18n="a2">A personal access code, sent on WhatsApp. Enter it once on the Premium site and the phone remembers it.</p></details>
+<details><summary data-i18n="q3">Where does the information come from?</summary><p data-i18n="a3">From the public auction notices (proclamations of sale) of the banks, collected and checked every day. Always confirm the details with the auctioneer before you bid.</p></details>
+<details><summary data-i18n="q4">Can I share my code?</summary><p data-i18n="a4">The code is personal, for your own phone and family. A code that is passed around can be switched off.</p></details>
+<details><summary data-i18n="q5">Who is behind the list?</summary><p data-i18n="a5">Zulkifli. Questions before you pay? WhatsApp 013-9402396.</p></details>
+</section>
+
+<p class="fine" data-i18n="fine">The list is a reference to help you find auction properties. It is not legal or financial advice, and Zulkifli is not the auctioneer or the bank. Auction dates, reserve prices and conditions can change; always check the proclamation of sale and the auctioneer's announcement before bidding.</p>
+<footer><span>Zulkifli</span><span>013-9402396</span><a href="https://zulkifli.lelongbidgroup.com/" data-i18n="prem_site">Premium site</a><a href="https://clientzulkifli.lelongbidgroup.com/" data-i18n="trial_site">Free preview</a></footer>
+</div>
+<div class="sticky wrap" id="stickyCta" style="padding-top:0"><a class="btn prem" href="#pay" data-i18n="cta2">Unlock Premium · RM50 for 30 days</a></div>
+
+<script>
+var KP='clientzulkifli.';
+var I18N={en:{},ms:{
+h1:'Senarai lelong penuh, tiada yang disembunyikan',
+sub:'Pratonton percuma menunjukkan hartanah. Premium menunjukkan semua yang anda perlu untuk membuat keputusan: alamat tepat, nilai pasaran, bank dan apa yang berlaku pada lelong terdahulu.',
+per:'untuk 30 hari · tiada pembaharuan automatik',per2:'VIP Investor Plan · angka untung, sewa dan jalan keluar setiap unit · <a href="#sip">lihat tambahan</a>',
+cta:'Buka Premium sekarang',back:'Kembali ke pratonton percuma',
+get_h:'Apa yang Premium buka',
+g1:'Alamat tepat + Google Maps',g1p:'Nombor rumah dan unit dipaparkan penuh. Satu tekan membuka lokasi.',
+g2:'Nilai pasaran dan % bawah nilai pasaran',g2p:'Lihat sejauh mana harga lelong di bawah nilaian, dan susun ikut diskaun terbesar.',
+g3:'Bank yang menjual',g3p:'Bank di sebalik setiap lelong, supaya anda tahu dengan siapa anda berurusan.',
+g4:'Harga lelong terdahulu',g4p:'Setiap pusingan sebelum ini dengan tarikh dan harga rizab, supaya anda nampak harga semakin turun.',
+g5:'Tahun siap',g5p:'Berapa usia bangunan, untuk kondominium, apartmen dan flat.',
+g7:'Nama peminjam',g7p:'Nama pada perisytiharan jualan, seperti yang disiarkan laman lelong (nama sahaja).',
+g6:'Dikemas kini setiap hari',g6p:'Unit baharu, tarikh lelong baharu dan keputusan masuk setiap hari. Pautan sama, hanya refresh.',
+cmp_h:'Pratonton percuma vs Premium',c_f:'Ciri',c_free:'Percuma',c_sip:'VIP',c9:'Nama peminjam',c10:'ROI, sewa, unjuran harga jualan dengan RPGT, pembiayaan semula',
+sip_h:'VIP Investor Plan · RM99 untuk 30 hari',sip_lead:'Untuk pelabur yang membeli untuk untung, bukan sekadar melihat. Semua dalam Premium, tambah angka yang pembeli serius kira sebelum membida, untuk setiap unit, setiap hari:',
+s_1:'Tahu jalan keluar sebelum membida',s_1p:'Keputusan 12 bulan untuk setiap unit: apa yang terjual dan pada harga berapa, apa yang dibatalkan, apa yang tiada pembida. Nampak unit yang asyik gagal dan bank yang terus potong harga rizab, bukan tahu selepas deposit dibayar.',
+s_2:'Untung selepas cukai, bukan sebelum',s_2p:'Unjuran harga jualan selepas 3 atau 5 tahun dengan RPGT Malaysia dan pengecualian sudah ditolak. Angka yang anda simpan, bukan angka yang nampak cantik.',
+s_3:'Pulangan sewa dan pendapatan berperabot',s_3p:'Pulangan kasar atas harga lelong dan berapa unit itu boleh jana selepas perabot asas, supaya pembelian untuk sewa dinilai ikut pendapatan, bukan harapan.',
+s_5:'Andaian anda, angka anda',s_5p:'Ubah sewa, kenaikan, nisbah pinjaman, tahun dan kadar RPGT di tempat, dan setiap angka dikemas kini untuk unit itu. Tiada spreadsheet, tiada kalkulator tengah malam.',
+c11:'Sejarah keputusan lelong (Tiada pembida, Dibatalkan, Terjual)',c11f:'30 hari',c11p:'30 hari',c11v:'12 bulan',
+s_4:'Pembiayaan semula dan cash-out sekali pandang',s_4p:'Berapa bank boleh pinjam atas nilai pasaran (90% kediaman, 70% komersial) dan sejauh mana ia melebihi harga lelong: unit di mana modal anda boleh keluar semula.',
+s_6:'Yang pertama sampai ke unit terbaik',s_6p:'Setiap unit dari semua bank dalam satu senarai, dikemas kini setiap hari, dengan nama peminjam, bank, harga terdahulu dan analisis penuh. Putuskan dalam beberapa minit sementara orang lain masih kumpul notis.',sip_why_h:'Kenapa pelabur serius bayar RM99',w1:'Di lelong, deposit 10% dibayar serta-merta dan hangus jika anda tidak dapat melengkapkan. Satu unit yang anda TIDAK beli kerana angkanya kata tidak sudah membayar VIP berkali ganda.',w2:'Satu laporan penilaian bank untuk satu hartanah lebih mahal daripada sebulan VIP, dan ia tidak cakap apa-apa tentang sejarah lelong atau jalan keluar.',w3:'Banding 20 unit dalam satu malam dengan kaedah yang sama. Konsisten itulah yang membezakan pelabur daripada pembida.',w4:'Bulan ke bulan, tiada pembaharuan automatik. Berhenti bila sudah beli.',sip_cta:'Langgan VIP Investor Plan · RM99',sip_fine:'Angka adalah anggaran daripada andaian yang boleh diubah dan notis lelong awam, bukan nasihat kewangan. Sejarah 12 bulan bermula dari September 2026. Sudah Premium? WhatsApp Zulkifli untuk naik taraf.',
+pl_p:'Premium · RM50',pl_s:'VIP Investor · RM99',
+c1:'Jenis hartanah, kawasan, harga, tarikh lelong',c2:'Alamat penuh dan Google Maps',c3:'Nilai pasaran dan diskaun',c4:'Bank',c5:'Tarikh dan harga lelong terdahulu',c6:'Tahun siap',c8:'Saiz, bilik tidur, bilik air, LACA, sekatan',c7:'Simpan unit, kongsi, cetak, WhatsApp ejen',
+pay_h:'Cara melanggan',pay_lead:'Tiga langkah. Kod dihantar selepas bayaran disahkan, biasanya pada hari yang sama.',
+s1:'Bayar harga pelan dengan mengimbas kod QR',s1p:'Buka aplikasi bank anda, imbas, dan bayar RM50 (Premium) atau RM99 (VIP Investor Plan). QR DuitNow boleh digunakan dengan mana-mana aplikasi bank Malaysia.',
+s2:'Hantar resit di WhatsApp',s2p:'Tekan butang hijau di bawah. Mesej sudah sedia, hanya lampirkan tangkapan skrin resit.',
+s3:'Terima kod akses anda',s3p:'Anda dapat kod peribadi dan pautan. Kod sah untuk tempoh yang anda bayar (30 hari setiap bulan). Sambung hanya jika mahu.',
+qr_c:'Imbas dengan mana-mana aplikasi bank Malaysia · Eden Assets & Property Solutions',
+wa:'💬 Hantar resit di WhatsApp',
+faq_h:'Soalan lazim',
+q1:'Adakah RM50 bayaran sekali sahaja?',a1:'RM50 memberi anda akses 30 hari. Tiada yang diperbaharui secara automatik. Jika mahu teruskan, anda bayar lagi untuk 30 hari seterusnya dan kod yang sama disambung. Anda juga boleh bayar 2 hingga 12 bulan sekali gus pada kadar sama, contohnya 3 bulan RM150 atau 12 bulan RM600.',
+q2:'Apa yang saya dapat selepas bayar?',a2:'Kod akses peribadi, dihantar di WhatsApp. Masukkan sekali di laman Premium dan telefon anda akan mengingatinya.',
+q3:'Dari mana maklumat ini datang?',a3:'Daripada notis lelong awam (perisytiharan jualan) bank, dikumpul dan disemak setiap hari. Sentiasa sahkan butiran dengan pelelong sebelum membida.',
+q4:'Boleh saya kongsi kod saya?',a4:'Kod itu peribadi, untuk telefon anda dan keluarga sendiri. Kod yang diedarkan boleh dimatikan.',
+q5:'Siapa di sebalik senarai ini?',a5:'Zulkifli. Ada soalan sebelum bayar? WhatsApp 013-9402396.',
+fine:'Senarai ini rujukan untuk membantu anda mencari hartanah lelong. Ia bukan nasihat undang-undang atau kewangan, dan Zulkifli bukan pelelong atau bank. Tarikh lelong, harga rizab dan syarat boleh berubah; sentiasa semak perisytiharan jualan dan pengumuman pelelong sebelum membida.',
+prem_site:'Laman Premium',trial_site:'Pratonton percuma',cta2:'Buka Premium · RM50 untuk 30 hari'}};
+var PLAN='premium',PRICES={premium:'50',sip:'99'};
+var WA={en:{premium:'Hi Zulkifli, I have paid RM50 for the 30-day Premium auction list. Here is my receipt.',sip:'Hi Zulkifli, I have paid RM99 for the 30-day VIP Investor Plan. Here is my receipt.'},
+ ms:{premium:'Hi Zulkifli, saya sudah bayar RM50 untuk senarai lelong Premium 30 hari. Ini resit saya.',sip:'Hi Zulkifli, saya sudah bayar RM99 untuk VIP Investor Plan 30 hari. Ini resit saya.'}};
+function waHref(){var l=document.documentElement.lang==='ms'?'ms':'en';document.getElementById('waBtn').href='https://wa.me/60139402396?text='+encodeURIComponent(WA[l][PLAN])}
+function setPlan(p){PLAN=p==='sip'?'sip':'premium';document.querySelectorAll('.plans button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-plan')===PLAN?'true':'false')});document.getElementById('amount').textContent='RM'+PRICES[PLAN];waHref()}
+document.querySelectorAll('[data-plan]').forEach(function(b){b.addEventListener('click',function(){setPlan(b.getAttribute('data-plan'))})});
+var EN={};document.querySelectorAll('[data-i18n]').forEach(function(e){EN[e.getAttribute('data-i18n')]=e.innerHTML});
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-alt-ms]').forEach(function(e){e.alt=e.getAttribute(l==='ms'?'data-alt-ms':'data-alt-en')});document.querySelectorAll('[data-i18n]').forEach(function(e){var k=e.getAttribute('data-i18n');e.innerHTML=l==='ms'&&I18N.ms[k]?I18N.ms[k]:EN[k]});
+ document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false')});
+ waHref();try{localStorage.setItem(KP+'lang',l)}catch(e){}}
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'))})});
+var l0='en';try{if(localStorage.getItem(KP+'lang')==='ms')l0='ms';var t=localStorage.getItem('clientzulkifli.theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+setLang(l0);if(location.hash==='#sip')setPlan('sip');
+// the floating button steps aside while the payment section (QR + WhatsApp) is on screen
+if(window.IntersectionObserver){var st=document.getElementById('stickyCta');new IntersectionObserver(function(es){es.forEach(function(e){st.hidden=e.isIntersecting})},{threshold:0.15}).observe(document.getElementById('pay'))}
+</script>
+</body>
+</html>
