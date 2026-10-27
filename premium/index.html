@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -203,7 +203,7 @@ function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[
  document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false')});
  waHref();try{localStorage.setItem(KP+'lang',l)}catch(e){}}
 document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'))})});
-var l0='en';try{if(localStorage.getItem(KP+'lang')==='ms')l0='ms';var t=localStorage.getItem('clientzulkifli.theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+var l0='en';try{if(localStorage.getItem(KP+'lang')==='ms')l0='ms';var t=localStorage.getItem('clientzulkifli.theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}
 setLang(l0);if(location.hash==='#sip')setPlan('sip');
 // the floating button steps aside while the payment section (QR + WhatsApp) is on screen
 if(window.IntersectionObserver){var st=document.getElementById('stickyCta');new IntersectionObserver(function(es){es.forEach(function(e){st.hidden=e.isIntersecting})},{threshold:0.15}).observe(document.getElementById('pay'))}
