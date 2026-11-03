@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Premium Auction List · Zulkifli</title>
-<meta name="description" content="Unlock the full private auction list: exact addresses with Google Maps, market value and discount, bank, price-cut history. RM50 for 30 days.">
-<meta property="og:type" content="website"><meta property="og:title" content="Premium Auction List · Zulkifli"><meta property="og:description" content="Exact addresses with Google Maps, market value and discount, bank, price-cut history. RM50 for 30 days, no auto-renewal."><meta property="og:url" content="https://clientzulkifli.lelongbidgroup.com/premium/"><meta property="og:image" content="https://lelongbidgroup.com/img/og-lelong.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Unlock the full private auction list: exact addresses with Google Maps, winning price calculator, bank, price-cut history. RM50 for 30 days.">
+<meta property="og:type" content="website"><meta property="og:title" content="Premium Auction List · Zulkifli"><meta property="og:description" content="Exact addresses with Google Maps, winning price calculator, bank, price-cut history. RM50 for 30 days, no auto-renewal."><meta property="og:url" content="https://clientzulkifli.lelongbidgroup.com/premium/"><meta property="og:image" content="https://lelongbidgroup.com/img/og-lelong.png"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f2a44">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
@@ -175,7 +175,7 @@ footer{margin-top:18px;padding-block:14px 120px;border-top:1px solid var(--line)
 <div class="hero">
   <div class="eyebrow" data-i18n="eyebrow">Premium members' list</div>
   <h1 data-i18n="h1">See every auction unit in full, before you bid</h1>
-  <p data-i18n="sub">The free preview shows what is for sale. Premium shows what it is worth: the exact address, the market value, the bank and every earlier price cut.</p>
+  <p data-i18n="sub">The free preview shows the price, the market value and how much you could save. Premium shows the rest: the exact address, the bank, every earlier price cut and the winning price calculator.</p>
   <div class="proof" id="proof" hidden>
     <div><b class="num" id="nAvail"></b><span data-i18n="pf1">units to bid on</span></div>
     <div><b class="num" id="nBmv"></b><span data-i18n="pf2">30%+ below market value</span></div>
@@ -196,8 +196,8 @@ footer{margin-top:18px;padding-block:14px 120px;border-top:1px solid var(--line)
     <div class="ex"><h3 data-i18n="ex_free">Free preview</h3>
       <div class="addr">No. XX-X, Residensi Contoh, 43300 Seri Kembangan, Selangor</div>
       <dl><dt data-i18n="d_price">Auction price</dt><dd class="num">RM 280,000</dd>
-      <dt data-i18n="d_mv">Market value</dt><dd class="lockv" data-i18n="locked">Premium only</dd>
-      <dt data-i18n="d_bmv">Below market</dt><dd class="lockv">XX%</dd>
+      <dt data-i18n="d_mv">Market value</dt><dd class="num">RM 400,000</dd>
+      <dt data-i18n="d_bmv">Below market</dt><dd class="num">30%</dd>
       <dt data-i18n="d_bank">Bank</dt><dd class="lockv" data-i18n="locked2">Premium only</dd>
       <dt data-i18n="d_hist">Price history</dt><dd class="lockv" data-i18n="locked3">Premium only</dd>
       <dt data-i18n="d_photo">Photo</dt><dd class="lockv" data-i18n="illus">Illustration</dd></dl>
@@ -224,7 +224,7 @@ footer{margin-top:18px;padding-block:14px 120px;border-top:1px solid var(--line)
       <li><div><b data-i18n="g1b">Real photos</b><span data-i18n="g1bp">The unit or its building where we have one, instead of an illustration.</span></div></li>
       <li><div><b data-i18n="g1c">Sort and filter by the biggest discount</b><span data-i18n="g1cp">Put the deepest discounts at the top in one tap.</span></div></li></ul></div>
     <div class="group"><h3><i>2</i><span data-i18n="g2h">Know what it is worth</span></h3><ul class="ticks">
-      <li><div><b data-i18n="g2a">Market value and the exact % below it</b><span data-i18n="g2ap">With "You save RM x" worked out on every card.</span></div></li>
+      <li><div><b data-i18n="g2a">Winning price calculator</b><span data-i18n="g2ap">Choose a winning price and see the % below market value and the instalment at once.</span></div></li>
       <li><div><b data-i18n="g2b">Price-cut history</b><span data-i18n="g2bp">Every earlier round, and how many times the bank has cut the price. A unit cut 5 times tells you the bank wants out.</span></div></li>
       <li><div><b data-i18n="g2c">Bank, completion year and borrower name</b><span data-i18n="g2cp">Who is selling, how old the building is, and the name on the proclamation (name only).</span></div></li></ul></div>
     <div class="group"><h3><i>3</i><span data-i18n="g3h">Act before others</span></h3><ul class="ticks">
@@ -232,7 +232,7 @@ footer{margin-top:18px;padding-block:14px 120px;border-top:1px solid var(--line)
       <li><div><b data-i18n="g3b">Auction results of the last 30 days</b><span data-i18n="g3bp">What sold, what had no bidder, what was cancelled.</span></div></li>
       <li><div><b data-i18n="g3c">Copy the address in one tap</b><span data-i18n="g3cp">For your own checks before you bid.</span></div></li></ul></div>
   </div>
-  <div class="value" data-i18n="value">Example: a unit worth <b>RM400,000</b> that goes to auction at <b>RM280,000</b> is <b>RM120,000</b> below market value. Premium shows the market value of every unit, so you can spot units like this in minutes for <b>RM50</b>.</div>
+  <div class="value" data-i18n="value">Example: a unit worth <b>RM400,000</b> that goes to auction at <b>RM280,000</b> is <b>RM120,000</b> below market value. The free list shows the market value of every unit. Premium gives the exact address, the bank and the price history, so you can act on units like this for <b>RM50</b>.</div>
   <div class="value live" id="valueLive" hidden></div>
 </section>
 
@@ -241,11 +241,11 @@ footer{margin-top:18px;padding-block:14px 120px;border-top:1px solid var(--line)
   <p class="lead" data-i18n="plans_lead">Start free. Upgrade when you find units you want to look at closely.</p>
   <div class="plans">
     <div class="plan"><h3 data-i18n="pf_h">Free preview</h3><div class="pr"><b>RM0</b></div>
-      <ul class="ticks"><li data-i18n="pf_1">Every unit: type, area, price, auction date</li><li data-i18n="pf_2">Size, tenure, LACA and restrictions</li><li data-i18n="pf_3">Price per sq ft and monthly instalment estimate</li><li data-i18n="pf_4">Search, filters, saved list, compare and share</li></ul>
+      <ul class="ticks"><li data-i18n="pf_1">Every unit: type, area, price, auction date</li><li data-i18n="pf_2">Size, tenure, LACA and restrictions</li><li data-i18n="pf_3">Price per sq ft and monthly instalment estimate</li><li data-i18n="pf_4">Search, filters, saved list, compare and share</li><li data-i18n="pf_5">Market value, % below market and savings</li></ul>
       <a class="btn line sm" href="https://clientzulkifli.lelongbidgroup.com/" data-i18n="pf_cta">Open the free preview</a></div>
     <div class="plan rec"><span class="rib" data-i18n="rec">Recommended</span><h3>Premium</h3><div class="pr"><b>RM50</b><span data-i18n="p30">/ 30 days</span></div><div class="per" data-i18n="pday">about RM1.67 a day</div>
       <span class="plus" data-i18n="pp_plus">Everything in Free, plus:</span>
-      <ul class="ticks"><li data-i18n="pp_1">Exact address, Google Maps and real photos</li><li data-i18n="pp_2">Market value, exact discount and savings</li><li data-i18n="pp_3">Price-cut history and earlier rounds</li><li data-i18n="pp_4">Bank, completion year, borrower name</li><li data-i18n="pp_5">Proclamation of sale from your agent</li><li data-i18n="pp_6">Auction results of the last 30 days</li></ul>
+      <ul class="ticks"><li data-i18n="pp_1">Exact address, Google Maps and real photos</li><li data-i18n="pp_2">Winning price calculator with instalment</li><li data-i18n="pp_3">Price-cut history and earlier rounds</li><li data-i18n="pp_4">Bank, completion year, borrower name</li><li data-i18n="pp_5">Proclamation of sale from your agent</li><li data-i18n="pp_6">Auction results of the last 30 days</li></ul>
       <a class="btn gold" href="#pay" data-plan="premium" data-i18n="pp_cta">Choose Premium · RM50</a></div>
     <div class="plan vip" id="sip"><span class="rib" data-i18n="forinv">For investors</span><h3>VIP Investor</h3><div class="pr"><b>RM99</b><span data-i18n="p30b">/ 30 days</span></div><div class="per" data-i18n="vday">about RM3.30 a day</div>
       <span class="plus" data-i18n="pv_plus">Everything in Premium, plus:</span>
@@ -265,7 +265,7 @@ footer{margin-top:18px;padding-block:14px 120px;border-top:1px solid var(--line)
       <tr><td data-i18n="c4">Search, filters, saved list, compare, share</td><td class="y">✓</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
       <tr><td data-i18n="c5">Exact address and Google Maps</td><td class="n">—</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
       <tr><td data-i18n="c6">Real photos of the unit or building</td><td class="n">—</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
-      <tr><td data-i18n="c7">Market value, % below market, savings</td><td class="n">—</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
+      <tr><td data-i18n="c7">Market value, % below market, savings</td><td class="y">✓</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
       <tr><td data-i18n="c8">Sort by the biggest discount</td><td class="n">—</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
       <tr><td data-i18n="c9">Price-cut history and earlier rounds</td><td class="n">—</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
       <tr><td data-i18n="c10">Bank, completion year, borrower name</td><td class="n">—</td><td class="y">✓</td><td class="y vipc">✓</td></tr>
@@ -333,7 +333,7 @@ footer{margin-top:18px;padding-block:14px 120px;border-top:1px solid var(--line)
 var KP='clientzulkifli.';
 var I18N={en:{pu_lt:'That is less than 1 sen per unit in the list today',pu_ab:'About {x} sen per unit in the list today',live_v:'Today the list has <b>{n}</b> units at 30% or more below market value.',st_cta:'Unlock'},ms:{
 with:'bersama Zulkifli',eyebrow:'Senarai ahli Premium',h1:'Lihat setiap unit lelong dengan lengkap, sebelum anda membida',
-sub:'Pratonton percuma tunjuk apa yang dijual. Premium tunjuk berapa nilainya: alamat tepat, nilai pasaran, bank dan setiap kali harga diturunkan.',
+sub:'Pratonton percuma tunjuk harga, nilai pasaran dan berapa anda boleh jimat. Premium tunjuk selebihnya: alamat tepat, bank, setiap kali harga diturunkan dan kiraan harga menang.',
 pf1:'unit boleh dibida',pf2:'unit 30%+ bawah nilai pasaran',pf3:'dikemas kini · 2 kali sehari',pf4:'lelong dalam 7 hari',back:'&larr; Kembali ke senarai percuma',cta_ask:'Tanya dulu di WhatsApp',recv:'Aplikasi bank anda memaparkan nama penerima <b>Eden Assets & Property Solutions</b> sebelum anda sahkan. Simpan resit.',st_sw:'tukar pelan',pu_lt:'Itu kurang 1 sen bagi setiap unit dalam senarai hari ini',pu_ab:'Kira-kira {x} sen bagi setiap unit dalam senarai hari ini',live_v:'Hari ini senarai ada <b>{n}</b> unit 30% atau lebih bawah nilai pasaran.',
 per:'untuk 30 hari · kira-kira RM1.67 sehari · tiada pembaharuan automatik',cta:'Buka Premium · RM50',cta_cmp:'Banding Free, Premium dan VIP &rsaquo;',
 ex_tag:'Contoh unit',diff_h:'Lihat bezanya',diff_lead:'Unit yang sama, seperti dalam pratonton percuma dan seperti yang dilihat ahli Premium.',
@@ -345,16 +345,16 @@ ex_note:'Angka contoh untuk gambaran. Setiap kad Premium menunjukkan angka seben
 get_h:'Apa yang Premium beri',get_lead:'Semua yang anda perlu untuk menilai sesuatu unit dan bertindak, untuk setiap unit dalam senarai, dikemas kini setiap hari.',
 g1h:'Cari unit yang betul',g1a:'Alamat tepat dan Google Maps',g1ap:'Nombor rumah dan unit penuh; satu tekan membuka paparan satelit.',
 g1b:'Gambar sebenar',g1bp:'Unit itu atau bangunannya jika ada, bukan gambar hiasan.',g1c:'Susun dan tapis ikut diskaun terbesar',g1cp:'Diskaun paling besar di atas dengan satu tekan.',
-g2h:'Tahu berapa nilainya',g2a:'Nilai pasaran dan % tepat di bawahnya',g2ap:'Dengan "Jimat RM x" dikira pada setiap kad.',
+g2h:'Tahu berapa nilainya',g2a:'Kiraan harga menang',g2ap:'Pilih harga menang dan terus lihat % bawah nilai pasaran serta ansuran.',
 g2b:'Sejarah turun harga',g2bp:'Setiap pusingan terdahulu, dan berapa kali bank menurunkan harga. Unit yang turun 5 kali menunjukkan bank mahu cepat lepas.',
 g2c:'Bank, tahun siap dan nama peminjam',g2cp:'Siapa yang menjual, berapa usia bangunan, dan nama pada perisytiharan jualan (nama sahaja).',
 g3h:'Bertindak lebih awal',g3a:'Minta perisytiharan jualan (POS) daripada ejen',g3ap:'Satu tekan menghantar unit itu kepada ejen anda di WhatsApp.',
 g3b:'Keputusan lelong 30 hari',g3bp:'Apa yang terjual, apa yang tiada pembida, apa yang dibatalkan.',g3c:'Salin alamat dengan satu tekan',g3cp:'Untuk semakan sendiri sebelum membida.',
-value:'Contoh: unit bernilai <b>RM400,000</b> yang dilelong pada <b>RM280,000</b> ialah <b>RM120,000</b> di bawah nilai pasaran. Premium menunjukkan nilai pasaran setiap unit, supaya anda jumpa unit seperti ini dalam beberapa minit dengan <b>RM50</b>.',
+value:'Contoh: unit bernilai <b>RM400,000</b> yang dilelong pada <b>RM280,000</b> ialah <b>RM120,000</b> di bawah nilai pasaran. Senarai percuma menunjukkan nilai pasaran setiap unit. Premium memberi alamat tepat, bank dan sejarah harga, supaya anda boleh bertindak ke atas unit seperti ini dengan <b>RM50</b>.',
 plans_h:'Pilih pelan anda',plans_lead:'Mula percuma. Naik taraf bila anda jumpa unit yang mahu dilihat dengan teliti.',
-pf_h:'Pratonton percuma',pf_1:'Setiap unit: jenis, kawasan, harga, tarikh lelong',pf_2:'Saiz, pegangan, LACA dan sekatan',pf_3:'Harga sekaki dan anggaran ansuran bulanan',pf_4:'Carian, penapis, senarai simpanan, banding dan kongsi',pf_cta:'Buka pratonton percuma',
+pf_h:'Pratonton percuma',pf_1:'Setiap unit: jenis, kawasan, harga, tarikh lelong',pf_2:'Saiz, pegangan, LACA dan sekatan',pf_3:'Harga sekaki dan anggaran ansuran bulanan',pf_4:'Carian, penapis, senarai simpanan, banding dan kongsi',pf_5:'Nilai pasaran, % bawah nilai pasaran dan jimat',pf_cta:'Buka pratonton percuma',
 rec:'Disyorkan',p30:'/ 30 hari',p30b:'/ 30 hari',pday:'kira-kira RM1.67 sehari',vday:'kira-kira RM3.30 sehari',forinv:'Untuk pelabur',
-pp_plus:'Semua dalam Free, tambah:',pp_1:'Alamat tepat, Google Maps dan gambar sebenar',pp_2:'Nilai pasaran, diskaun tepat dan jimat',pp_3:'Sejarah turun harga dan pusingan terdahulu',pp_4:'Bank, tahun siap, nama peminjam',pp_5:'Perisytiharan jualan (POS) daripada ejen',pp_6:'Keputusan lelong 30 hari',pp_cta:'Pilih Premium · RM50',
+pp_plus:'Semua dalam Free, tambah:',pp_1:'Alamat tepat, Google Maps dan gambar sebenar',pp_2:'Kiraan harga menang dengan ansuran',pp_3:'Sejarah turun harga dan pusingan terdahulu',pp_4:'Bank, tahun siap, nama peminjam',pp_5:'Perisytiharan jualan (POS) daripada ejen',pp_6:'Keputusan lelong 30 hari',pp_cta:'Pilih Premium · RM50',
 pv_plus:'Semua dalam Premium, tambah:',pv_1:'Keputusan lelong 12 bulan untuk setiap unit',pv_2:'Skor pelabur 0-100 setiap unit, dengan cara ia dikira',pv_3:'Susun seluruh senarai ikut skor pelabur',pv_cta:'Pilih VIP · RM99',
 cmp_h:'Free, Premium dan VIP sebelah-menyebelah',c_f:'Apa yang anda nampak',c_free:'Free',
 c1:'Setiap unit: jenis, kawasan, harga, tarikh lelong',c2:'Saiz, pegangan, LACA, sekatan',c3:'Harga sekaki, anggaran ansuran bulanan',c4:'Carian, penapis, senarai simpanan, banding, kongsi',
